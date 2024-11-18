@@ -28,7 +28,7 @@ python predict_service.py --input new_data.csv --model trained_model.pkl --outpu
 
 ## Goals
  - [x] Extract the pcap(dataset) parameters for both cient and server .
-    - [ ] fill the service column that gives the service used
+    - [X] fill the service column that gives the service used
  - [x] make a model that must be trained and tested
-    - [ ] save the data in pkl file using pickel library
- - [ ] The model must predict the service used when a packet was detected again
+    - [X] save the data in pkl file using pickel library
+ - [X] The model must predict the service used when a packet was detected again
