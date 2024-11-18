@@ -11,9 +11,6 @@ Some resources that will be useful to us when learning about TLS 1.3
 * [Test for TLS 1.3 Support](https://www.cdn77.com/tls-test)
 * [TLS 1.3 illustrated](https://tls13.ulfheim.net/)
 
-### Test Endpoint
-We want a server that we can make TLS 1.3 requests to and also enable 0-RTT (because I couldn't find a server that supports this...)
-
 ### Helpful snippet
 Client:
 
