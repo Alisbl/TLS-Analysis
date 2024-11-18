@@ -1,3 +1,5 @@
+import socket
+import requests
 def get_service_info(domain):
     """
     Retrieves the service name based on the SNI (Server Name Indication).
