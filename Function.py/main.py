@@ -3,7 +3,7 @@ output_file_path = r'C:\Users\pc\PycharmProjects\pythonProject4\extracted_pcap_d
 model_pickle_file = 'updated_trained_model.pkl'
 preprocessor_pickle_file = 'preprocessor.pkl'
 def main():
-    pcap_file_path = r'C:\Users\pc\Desktop\demo5.pcapng'
+    pcap_file_path = r'C:\Users\pc\Desktop\dataset2.pcapng'
 
     # Step 1: Extract packets from the PCAP file
     client_data = extract_client_packets(pcap_file_path)
@@ -19,6 +19,19 @@ def main():
     train_and_test_model(output_file_path)
     #step 5:fill the service column using the trained model
     fill_service_column_with_predicted_data(pcap_file_path, model_pickle_file, output_file_path)
+    analyzed_data_path = "predicted_extracted_pcap_data_packets.csv"
+    if os.path.exists(analyzed_data_path):
+        try:
+            analyzed_data_df = pd.read_csv(analyzed_data_path)
+            results = statistical_analysis(pcap_file_path, analyzed_data_df)
+            print("Statistical Analysis Results:")
+            for key, value in results.items():
+                print(f"{key}: {value}")
+        except Exception as e:
+            print(f"Error loading or analyzing data: {e}")
+    else:
+        print("Analyzed data file not found.")
 
+    print(json.dumps(results, indent=4))
 if __name__ == '__main__':
     main()
